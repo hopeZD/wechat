@@ -7,19 +7,23 @@
     class Weixin {
 
         public function checkSignature() {
-            $signature = $_GET['signature'];
-            $timestamp = $_GET['timestamp'];
-            $nonce = $_GET['nonce'];
-            $token = TOKEN;
+            $signature = $_GET["signature"];   //加密签名
+            $timestamp = $_GET["timestamp"]; //时间戳
+            $nonce = $_GET["nonce"];	//随机数
 
-            $tmpArr = array($token, $timestamp, $nonce);
-            sort($tmpArr, SORT_STRING);
-            $tmpStr = implode($tmpArr);
-            $tmpStr = sha1($tmpArr);
+            $token = TOKEN; //token
 
-            if($tmpStr == $signature) {
-                echo $_GET['echostr'];
-            } else {
+
+            $tmpArr = array($token, $timestamp, $nonce);//组成新数组
+            sort($tmpArr, SORT_STRING);//重新排序
+            $tmpStr = implode( $tmpArr );//转换成字符串
+            $tmpStr = sha1( $tmpStr );  //再将字符串进行加密
+
+
+            if( $tmpStr == $signature ){
+
+                echo  $_GET['echostr'];
+            }else{
                 return false;
             }
         }
