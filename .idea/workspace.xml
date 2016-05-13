@@ -27,11 +27,11 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+            <state relative-caret-position="-195">
+              <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
               <folding>
-                <marker date="1463126485000" expanded="true" signature="1301:1680" placeholder="..." />
-                <marker date="1463126485000" expanded="true" signature="2053:2360" placeholder="..." />
+                <marker date="1463126874000" expanded="true" signature="1306:1685" placeholder="..." />
+                <marker date="1463126874000" expanded="true" signature="2063:2370" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -67,7 +67,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="464" />
+    <option name="x" value="232" />
     <option name="y" value="23" />
     <option name="width" value="1185" />
     <option name="height" value="689" />
@@ -172,15 +172,15 @@
       <updated>1463025107167</updated>
       <workItem from="1463025112761" duration="1842000" />
       <workItem from="1463117384468" duration="7227000" />
-      <workItem from="1463126160895" duration="333000" />
+      <workItem from="1463126160895" duration="697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9402000" />
+    <option name="totallyTimeSpent" value="9766000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="464" y="23" width="1185" height="689" extended-state="0" />
+    <frame x="232" y="23" width="1185" height="689" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10970464" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -215,8 +215,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1463126485000" expanded="true" signature="1301:1680" placeholder="..." />
-            <marker date="1463126485000" expanded="true" signature="2053:2360" placeholder="..." />
+            <marker date="1463126874000" expanded="true" signature="1306:1685" placeholder="..." />
+            <marker date="1463126874000" expanded="true" signature="2063:2370" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -234,8 +234,8 @@
         <state relative-caret-position="414">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
-            <marker date="1463126485000" expanded="true" signature="1301:1680" placeholder="..." />
-            <marker date="1463126485000" expanded="true" signature="2053:2360" placeholder="..." />
+            <marker date="1463126874000" expanded="true" signature="1306:1685" placeholder="..." />
+            <marker date="1463126874000" expanded="true" signature="2063:2370" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -258,11 +258,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+        <state relative-caret-position="-195">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
           <folding>
-            <marker date="1463126485000" expanded="true" signature="1301:1680" placeholder="..." />
-            <marker date="1463126485000" expanded="true" signature="2053:2360" placeholder="..." />
+            <marker date="1463126874000" expanded="true" signature="1306:1685" placeholder="..." />
+            <marker date="1463126874000" expanded="true" signature="2063:2370" placeholder="..." />
           </folding>
         </state>
       </provider>

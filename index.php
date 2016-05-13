@@ -47,17 +47,18 @@
 
             if(!empty($postSql)) {
 
-                switch(trim($postSql->MegType)) {
+                switch (trim($postSql->MsgType)) {
+
                     case "text" :
                         $result = $this->receiveText($postSql);
 
-                        if(!empty($result)) {
 
+                        if (!empty($result)) {
                             echo $result;
 
                         } else {
 
-                            $xml="<xml>
+                            $xml = "<xml>
                                 <ToUserName><![CDATA[%s]]></ToUserName>
                                 <FromUserName><![CDATA[%s]]></FromUserName>
                                 <CreateTime>%s</CreateTime>
@@ -65,8 +66,7 @@
                                 <Content><![CDATA[%s]]></Content>
                                 </xml>";
 
-
-                            echo $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType,"没有这条文本信息!");
+                            echo $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "没有这条文本消息");
                         }
                 }
             }
