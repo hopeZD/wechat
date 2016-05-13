@@ -38,18 +38,58 @@
             $postSql = simplexml_load_string($obj, 'simpleXMLElement', LIBXML_NOCDATA);
             $this->logget("接收:".$obj);
 
+            if(!empty($postSql)) {
+
+                switch ($postSql->Msgtype) {
+                    case "text":
+                        $result = $this->receiveText($postSql);
+
+                        if(!empty($result)) {
+                            echo $result;
+                        } else {
+                            $xml = " <xml>
+                                <ToUserName><![CDATA[%s]]></ToUserName>
+                                <FromUserName><![CDATA[%s]]></FromUserName>
+                                <CreateTime>%s</CreateTime>
+                                <MsgType><![CDATA[%s]]></MsgType>
+                                <Content><![CDATA[%s]]></Content>
+                                </xml>";
+
+                            echo $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "没有这条文本消息!");
+                        }
+
+                        break;
+                }
+            }
+
 
         }
 
-        private function logger($content) {
+        private function receiveText($postSql) {
+            $content = trim($postSql->Content);
 
+            if(strstr($content, "你好")) {
+                $xml = " <xml>
+                    <ToUserName><![CDATA[%s]]></ToUserName>
+                    <FromUserName><![CDATA[%s]]></FromUserName>
+                    <CreateTime>%s</CreateTime>
+                    <MsgType><![CDATA[%s]]></MsgType>
+                    <Content><![CDATA[%s]]></Content>
+                    </xml>";
+                $contentText = "hello";
+
+                $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, $contentText);
+                return $result;
+            }
+        }
+
+        private function logger($content) {
             $logSize = 100000;
             $log = "log.txt";
 
             if (file_exists($log) && filesize($log) > $log) {
                 unlink($log);
             }
-
             file_put_contents($log, date("H:i:s")." ".$content.'\n', FILE_APPEND);
 
         }

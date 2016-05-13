@@ -27,9 +27,13 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-              <folding />
+            <state relative-caret-position="457">
+              <caret line="57" column="33" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+              <folding>
+                <marker date="1463121274000" expanded="true" signature="1353:1732" placeholder="..." />
+                <marker date="1463121274000" expanded="true" signature="2152:2154" placeholder="..." />
+                <marker date="1463121274000" expanded="true" signature="2152:2459" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,7 +70,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="369" />
+    <option name="x" value="-63" />
     <option name="y" value="23" />
     <option name="width" value="1185" />
     <option name="height" value="689" />
@@ -168,15 +172,15 @@
       <option name="presentableId" value="Default" />
       <updated>1463025107167</updated>
       <workItem from="1463025112761" duration="1842000" />
-      <workItem from="1463117384468" duration="1717000" />
+      <workItem from="1463117384468" duration="3357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3559000" />
+    <option name="totallyTimeSpent" value="5199000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="369" y="23" width="1185" height="689" extended-state="0" />
+    <frame x="-63" y="23" width="1185" height="689" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13839662" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -210,7 +214,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1463121274000" expanded="true" signature="1353:1732" placeholder="..." />
+            <marker date="1463121274000" expanded="true" signature="2152:2154" placeholder="..." />
+            <marker date="1463121274000" expanded="true" signature="2152:2459" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -236,9 +244,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="36" column="52" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
-          <folding />
+        <state relative-caret-position="457">
+          <caret line="57" column="33" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+          <folding>
+            <marker date="1463121274000" expanded="true" signature="1353:1732" placeholder="..." />
+            <marker date="1463121274000" expanded="true" signature="2152:2154" placeholder="..." />
+            <marker date="1463121274000" expanded="true" signature="2152:2459" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
