@@ -2,15 +2,17 @@
 
     define("TOKEN", "hope");
     $obj = new Weixin();
-    $obj->checkSignature();
 
-//    if(!isset($_GET['echostr'])) {
-//
-//        //$obj->receive();
-//
-//    } else {
-//
-//    }
+
+    if(!isset($_GET['echostr'])) {
+
+        $obj->receive();
+
+    } else {
+
+        $obj->checkSignature();
+
+    }
 
 
     class Weixin {
@@ -32,8 +34,26 @@
                 echo $_GET['echostr'];
 
             } else {
-                
+
                 return false;
             }
+        }
+
+        public function receive() {
+            $obj = file_get_contents("php://input");
+            $postSql = simplexml_load_string($obj, 'simpleXMLElement', LIBXML_NOCDATA);
+            $this->logger("接收: \n".$obj);
+        }
+
+        private function logger($content) {
+
+            $logSize = 100000;
+            $log = "log.txt";
+
+            if(file_exists($log) && filesize($log) > $logSize) {
+                unlink($log);
+            }
+
+            file_put_contents($log, date('H:i:s')." ".$content."\n", FILE_APPEND);
         }
     }
