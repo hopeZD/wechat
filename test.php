@@ -10,7 +10,7 @@
      </xml>";
 
 
- 	$obj=simplexml_load_string($xml);
+ 	$obj=simplexml_load_string($xml, 'simpleXMLElement', LIBXML_NOCDATA);
 
  	var_dump($obj);
 
