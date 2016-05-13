@@ -2,14 +2,15 @@
 
     define("TOKEN", "hope");
     $obj = new Weixin();
+    $obj->checkSignature();
 
-    if(!isset($_GET['echostr'])) {
-
-        //$obj->receive();
-
-    } else {
-        $obj->checkSignature();
-    }
+//    if(!isset($_GET['echostr'])) {
+//
+//        //$obj->receive();
+//
+//    } else {
+//
+//    }
 
 
     class Weixin {
@@ -27,8 +28,11 @@
             $tmpStr = sha1($tmpStr);
 
             if($tmpStr == $signature) {
-                return $_GET['echostr'];
+
+                echo $_GET['echostr'];
+
             } else {
+                
                 return false;
             }
         }
