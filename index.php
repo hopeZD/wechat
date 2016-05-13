@@ -42,7 +42,7 @@ class   Weixin{
 
     public  function  receive(){
 
-        $obj=$GLOBALS['HTTP_RAW_POST_DATA'];
+        $obj= file_get_contents("php://input");
         $postSql=simplexml_load_string($obj,'SimpleXMLElement',LIBXML_NOCDATA);
 
 
