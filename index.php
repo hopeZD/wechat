@@ -36,7 +36,7 @@
 
             $obj = GLOBALS['HTTP_RAW_POST_DATA'];
             $postSql = simplexml_load_string($obj, 'simpleXMLElement', LIBXML_NOCDATA);
-            $this->logget($postSql);
+            $this->logget("接收:".$obj);
 
 
         }
