@@ -54,8 +54,8 @@
                                     <MsgType><![CDATA[%s]]></MsgType>
                                     <Content><![CDATA[%s]]></Content>
                                    </xml>";
-                            
-                            echo $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType,"没有这条文本消息");
+
+                            echo $result=sprintf($xml, $postSql->FromUserName, $postSql->ToUserName,time(), $postSql->MsgType, "没有这条文本消息");
                         }
 
                 }
@@ -78,8 +78,7 @@
 					  </xml>";
 
 
-                $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType,"hello");
-
+                $result=sprintf($xml, $postSql->FromUserName, $postSql->ToUserName,time(), $postSql->MsgType, "hello");
                 return $result;
 
             }
@@ -88,11 +87,13 @@
 
         private function logger($content) {
             $logSize = 100000;
+
             $log = "log.txt";
 
             if (file_exists($log) && filesize($log) > $log) {
                 unlink($log);
             }
+
 
             file_put_contents($log, date('H:i:s')." ".$content."\n", FILE_APPEND);
 
