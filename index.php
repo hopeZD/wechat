@@ -42,7 +42,51 @@
         public function receive() {
             $obj = file_get_contents("php://input");
             $postSql = simplexml_load_string($obj, 'simpleXMLElement', LIBXML_NOCDATA);
+
             $this->logger("接收: \n".$obj);
+
+            if(!empty($postSql)) {
+
+                switch(trim($postSql->MegType)) {
+                    case "text" :
+                        $result = $this->receiveText($postSql);
+
+                        if(!empty($result)) {
+
+                            echo $result;
+
+                        } else {
+
+                            $xml = "<xml>
+                                <ToUserName><![CDATA[%s]]></ToUserName>
+                                <FromUserName><![CDATA[%s]]></FromUserName>
+                                <CreateTime>%s</CreateTime>
+                                <MsgType><![CDATA[%s]]></MsgType>
+                                <Content><![CDATA[%s]]></Content>
+                                </xml>";
+                            echo $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "没有这条文本信息!");
+
+                        }
+                }
+            }
+        }
+
+        private function receiveText($postSql) {
+            $content = trim($postSql->Content);
+
+            if(strstr($content, "你好")) {
+                $xml = "<xml>
+                    <ToUserName><![CDATA[%s]]></ToUserName>
+                    <FromUserName><![CDATA[%s]]></FromUserName>
+                    <CreateTime>%s</CreateTime>
+                    <MsgType><![CDATA[%s]]></MsgType>
+                    <Content><![CDATA[%s]]></Content>
+                    </xml>";
+
+                $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "hello");
+
+                return $result;
+            }
         }
 
         private function logger($content) {
