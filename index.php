@@ -47,40 +47,43 @@
                         if(!empty($result)) {
                             echo $result;
                         } else {
-                            $xml = " <xml>
-                                <ToUserName><![CDATA[%s]]></ToUserName>
-                                <FromUserName><![CDATA[%s]]></FromUserName>
-                                <CreateTime>%s</CreateTime>
-                                <MsgType><![CDATA[%s]]></MsgType>
-                                <Content><![CDATA[%s]]></Content>
-                                </xml>";
-
-                            echo $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "没有这条文本消息!");
+                            $xml="<xml>
+                                    <ToUserName><![CDATA[%s]]></ToUserName>
+                                    <FromUserName><![CDATA[%s]]></FromUserName>
+                                    <CreateTime>%s</CreateTime>
+                                    <MsgType><![CDATA[%s]]></MsgType>
+                                    <Content><![CDATA[%s]]></Content>
+                                   </xml>";
+                            
+                            echo $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType,"没有这条文本消息");
                         }
 
-                        break;
                 }
             }
 
 
         }
 
-        private function receiveText($postSql) {
-            $content = trim($postSql->Content);
+        private function receiveText($postSql){
+            $content=trim($postSql->Content);
 
-            if(strstr($content, "你好")) {
-                $xml = " <xml>
-                    <ToUserName><![CDATA[%s]]></ToUserName>
-                    <FromUserName><![CDATA[%s]]></FromUserName>
-                    <CreateTime>%s</CreateTime>
-                    <MsgType><![CDATA[%s]]></MsgType>
-                    <Content><![CDATA[%s]]></Content>
-                    </xml>";
-                $contentText = "hello";
 
-                $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, $contentText);
+            if(strstr($content,"你好")){
+                $xml="<xml>
+						<ToUserName><![CDATA[%s]]></ToUserName>
+						<FromUserName><![CDATA[%s]]></FromUserName>
+						<CreateTime>%s</CreateTime>
+						<MsgType><![CDATA[%s]]></MsgType>
+						<Content><![CDATA[%s]]></Content>
+					  </xml>";
+
+
+                $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType,"hello");
+
                 return $result;
+
             }
+
         }
 
         private function logger($content) {
@@ -90,7 +93,7 @@
             if (file_exists($log) && filesize($log) > $log) {
                 unlink($log);
             }
-            
+
             file_put_contents($log, date('H:i:s')." ".$content."\n", FILE_APPEND);
 
         }
