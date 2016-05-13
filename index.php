@@ -68,8 +68,6 @@
 
                             echo $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "没有这条文本消息");
                         }
-                        
-                    break;
 
 
                 }
@@ -99,6 +97,7 @@
             }
 
             $this->logger($result);
+
             return result;
 
         }
@@ -121,9 +120,10 @@
                 </item>
                 </Articles>
                 </xml>";
+
             $result = sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),"news", "hello妹子",
                    "疯狂牛仔裤,哈哈哈!!!", "http://img2.imgtn.bdimg.com/it/u=49720598,360488538&fm=21&gp=0.jpg",
-                    "http://image.baidu.com/");
+                   "http://image.baidu.com/");
 
             return $result;
 
