@@ -90,7 +90,8 @@
             if (file_exists($log) && filesize($log) > $log) {
                 unlink($log);
             }
-            file_put_contents($log, date("H:i:s")." ".$content.'\n', FILE_APPEND);
+            
+            file_put_contents($log, date('H:i:s')." ".$content."\n", FILE_APPEND);
 
         }
 

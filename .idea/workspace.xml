@@ -27,12 +27,12 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-312">
-              <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+            <state relative-caret-position="336">
+              <caret line="92" column="12" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
               <folding>
-                <marker date="1463121415000" expanded="true" signature="1353:1732" placeholder="..." />
-                <marker date="1463121415000" expanded="true" signature="2152:2154" placeholder="..." />
-                <marker date="1463121415000" expanded="true" signature="2152:2459" placeholder="..." />
+                <marker date="1463121565000" expanded="true" signature="1353:1732" placeholder="..." />
+                <marker date="1463121565000" expanded="true" signature="2152:2154" placeholder="..." />
+                <marker date="1463121565000" expanded="true" signature="2152:2459" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -172,12 +172,12 @@
       <option name="presentableId" value="Default" />
       <updated>1463025107167</updated>
       <workItem from="1463025112761" duration="1842000" />
-      <workItem from="1463117384468" duration="3486000" />
+      <workItem from="1463117384468" duration="3615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5328000" />
+    <option name="totallyTimeSpent" value="5457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-63" y="23" width="1185" height="689" extended-state="0" />
@@ -215,9 +215,9 @@
         <state relative-caret-position="414">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
-            <marker date="1463121415000" expanded="true" signature="1353:1732" placeholder="..." />
-            <marker date="1463121415000" expanded="true" signature="2152:2154" placeholder="..." />
-            <marker date="1463121415000" expanded="true" signature="2152:2459" placeholder="..." />
+            <marker date="1463121565000" expanded="true" signature="1353:1732" placeholder="..." />
+            <marker date="1463121565000" expanded="true" signature="2152:2154" placeholder="..." />
+            <marker date="1463121565000" expanded="true" signature="2152:2459" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -244,12 +244,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-312">
-          <caret line="46" column="45" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        <state relative-caret-position="336">
+          <caret line="92" column="12" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
           <folding>
-            <marker date="1463121415000" expanded="true" signature="1353:1732" placeholder="..." />
-            <marker date="1463121415000" expanded="true" signature="2152:2154" placeholder="..." />
-            <marker date="1463121415000" expanded="true" signature="2152:2459" placeholder="..." />
+            <marker date="1463121565000" expanded="true" signature="1353:1732" placeholder="..." />
+            <marker date="1463121565000" expanded="true" signature="2152:2154" placeholder="..." />
+            <marker date="1463121565000" expanded="true" signature="2152:2459" placeholder="..." />
           </folding>
         </state>
       </provider>
