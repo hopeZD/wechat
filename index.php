@@ -36,7 +36,7 @@
 
             $obj = file_get_contents("php://input");
             $postSql = simplexml_load_string($obj, 'simpleXMLElement', LIBXML_NOCDATA);
-            $this->logget("接收:".$obj);
+            $this->logger("接收:".$obj);
 
             if(!empty($postSql)) {
 
