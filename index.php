@@ -78,18 +78,20 @@
             $content=trim($postSql->Content);
 
 
-            if(strstr($content,"你好")) {
-                $xml = "<xml>
-                    <ToUserName><![CDATA[%s]]></ToUserName>
-                    <FromUserName><![CDATA[%s]]></FromUserName>
-                    <CreateTime>%s</CreateTime>
-                    <MsgType><![CDATA[%s]]></MsgType>
-                    <Content><![CDATA[%s]]></Content>
-                    </xml>";
+            if(strstr($content,"你好")){
+                $xml="<xml>
+						<ToUserName><![CDATA[%s]]></ToUserName>
+						<FromUserName><![CDATA[%s]]></FromUserName>
+						<CreateTime>%s</CreateTime>
+						<MsgType><![CDATA[%s]]></MsgType>
+						<Content><![CDATA[%s]]></Content>
+					  </xml>";
 
 
-                $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "hello");
-                return result;
+                $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType,"hello");
+
+                return $result;
+
             }
 
 //            } else if (strstr($content, "单图文")) {
