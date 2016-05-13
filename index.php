@@ -41,7 +41,7 @@
 
         public function receive() {
             $obj = file_get_contents("php://input");
-            $postSql = simplexml_load_string($obj, 'simpleXMLElement', LIBXML_NOCDATA);
+            $postSql = simplexml_load_string($obj, 'SimpleXMLElement', LIBXML_NOCDATA);
 
             $this->logger("接收: \n".$obj);
 
