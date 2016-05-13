@@ -71,22 +71,26 @@
             }
         }
 
-        private function receiveText($postSql) {
-            $content = trim($postSql->Content);
+        private function receiveText($postSql){
+            $content=trim($postSql->Content);
 
-            if(strstr($content, "你好")) {
-                $xml = "<xml>
-                    <ToUserName><![CDATA[%s]]></ToUserName>
-                    <FromUserName><![CDATA[%s]]></FromUserName>
-                    <CreateTime>%s</CreateTime>
-                    <MsgType><![CDATA[%s]]></MsgType>
-                    <Content><![CDATA[%s]]></Content>
-                    </xml>";
 
-                $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "hello");
+            if(strstr($content,"你好")){
+                $xml="<xml>
+						<ToUserName><![CDATA[%s]]></ToUserName>
+						<FromUserName><![CDATA[%s]]></FromUserName>
+						<CreateTime>%s</CreateTime>
+						<MsgType><![CDATA[%s]]></MsgType>
+						<Content><![CDATA[%s]]></Content>
+					  </xml>";
+
+
+                $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType,"hello");
 
                 return $result;
+
             }
+
         }
 
         private function logger($content) {
