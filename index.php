@@ -122,7 +122,7 @@
                 </xml>";
 
             $result=sprintf($xml, $postSql->FromUserName, $postSql->ToUserName,time(), "news", "hello妹子",
-                   "疯狂牛仔裤,哈哈哈!!!", "http://img2.imgtn.bdimg.com/it/u=49720598,360488538&fm=21&gp=0.jpg",
+                   "疯狂牛仔裤,哈哈哈!!!", "http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg",
                    "http://image.baidu.com/");
 
             return $result;
