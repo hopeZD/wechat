@@ -90,48 +90,44 @@
 
                 $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType,"hello");
 
-                return $result;
+            } else if(strstr($content, "单图文"))  {
+
+                $result = $this->receiveImage($postSql);
 
             }
 
-//            } else if (strstr($content, "单图文")) {
-//
-//                $result = $this->receiveImage($postSql);
-//
-//            }
-//
-//            $this->logger($result);
-//
-//            return result;
+            $this->logger("发送单图文消息: \n".$result);
+
+            return $result;
 
         }
 
         //单图文消息
-//        private function receiveImage($postSql) {
-//
-//            $xml = "<xml>
-//                <ToUserName><![CDATA[%s]]></ToUserName>
-//                <FromUserName><![CDATA[%s]]></FromUserName>
-//                <CreateTime>%s</CreateTime>
-//                <MsgType><![CDATA[%s]]></MsgType>
-//                <ArticleCount>1</ArticleCount>
-//                <Articles>
-//                <item>
-//                <Title><![CDATA[%s]]></Title>
-//                <Description><![CDATA[%s]]></Description>
-//                <PicUrl><![CDATA[%s]]></PicUrl>
-//                <Url><![CDATA[%s]]></Url>
-//                </item>
-//                </Articles>
-//                </xml>";
-//
-//            $result = sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),"news", "hello妹子",
-//                   "疯狂牛仔裤,哈哈哈!!!", "http://img2.imgtn.bdimg.com/it/u=49720598,360488538&fm=21&gp=0.jpg",
-//                   "http://image.baidu.com/");
-//
-//            return $result;
-//
-//        }
+        private function receiveImage($postSql) {
+
+            $xml = "<xml>
+                <ToUserName><![CDATA[%s]]></ToUserName>
+                <FromUserName><![CDATA[%s]]></FromUserName>
+                <CreateTime>%s</CreateTime>
+                <MsgType><![CDATA[%s]]></MsgType>
+                <ArticleCount>1</ArticleCount>
+                <Articles>
+                <item>
+                <Title><![CDATA[%s]]></Title>
+                <Description><![CDATA[%s]]></Description>
+                <PicUrl><![CDATA[%s]]></PicUrl>
+                <Url><![CDATA[%s]]></Url>
+                </item>
+                </Articles>
+                </xml>";
+
+            $result=sprintf($xml, $postSql->FromUserName, $postSql->ToUserName,time(), "news", "hello妹子",
+                   "疯狂牛仔裤,哈哈哈!!!", "http://img2.imgtn.bdimg.com/it/u=49720598,360488538&fm=21&gp=0.jpg",
+                   "http://image.baidu.com/");
+
+            return $result;
+
+        }
 
         private function logger($content) {
 
