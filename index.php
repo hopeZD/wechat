@@ -162,7 +162,7 @@
 
             $news="";
             foreach ($content as $newArray) {
-                $news.=sprintf($str, $newArray['Title'], $newArray['Description'], $newArray['PicUrl'], $newArray['Url']);
+                $news.=sprintf($str,$newArray['Title'],$newArray['Description'],$newArray['PicUrl'],$newArray['Url']);
             }
 
             $xml = "<xml>
