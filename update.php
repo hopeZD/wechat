@@ -42,7 +42,7 @@
 
         $result = json_encode($json);
 
-        return $result->access_token;
+        return $result;
     }
 
     $token = get_token();
