@@ -31,18 +31,16 @@
 
     }
 
-    function get_token() {
-
-        $appid = "wxdb5a0ddedad0093d";
-        $secret= "d4624c36b6795d1d99dcf0547af5443d";
+    function  get_token(){
+        $appid="wxdb5a0ddedad0093d";
+        $secret="d4624c36b6795d1d99dcf0547af5443d";
 
         $url="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={$appid}&secret={$secret}";
 
-        $json = http_curl($url);
+        $json=http_curl($url);
+        $result=json_decode($json);
 
-        $result = json_encode($json);
-
-        return $result;
+        return $result->access_token;
     }
 
     $token = get_token();
