@@ -10,6 +10,7 @@
     function http_curl($url, $data=null) {
 
         $ch = curl_init();
+        curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
 
         curl_setopt($ch, CURLOPT_URL, $url);
 
