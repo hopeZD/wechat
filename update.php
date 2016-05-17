@@ -37,7 +37,7 @@
 
         $result = json_encode($json);
 
-        return $result;
+        return $result->access_token;
     }
 
     $token = get_token();
