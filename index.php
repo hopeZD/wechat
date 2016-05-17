@@ -94,9 +94,14 @@
 
                 $result = $this->receiveImage($postSql);
 
+            } else if (strstr($content, "多图文")) {
+
+                $result = $this->receiveImages($postSql);
+
             }
 
-            $this->logger("发送单图文消息: \n".$result);
+
+            $this->logger("发送图文消息: \n".$result);
 
             return $result;
 
@@ -127,6 +132,54 @@
 
             return $result;
 
+        }
+
+        //多图文
+        private function receiveImages($postSql) {
+
+            $content = array();
+            $content[] = array("Title" => "hello妹子",
+                               "Description" => "疯狂牛仔裤,哈哈哈!!!",
+                               "PicUrl" => "http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg",
+                               "Url" => "http://image.baidu.com/");
+
+            $content[] = array("Title" => "hello妹子",
+                "Description" => "疯狂牛仔裤,哈哈哈!!!",
+                "PicUrl" => "http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg",
+                "Url" => "http://image.baidu.com/");
+
+            $content[] = array("Title" => "hello妹子",
+                "Description" => "疯狂牛仔裤,哈哈哈!!!",
+                "PicUrl" => "http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg",
+                "Url" => "http://image.baidu.com/");
+
+            $str = "<item>
+                <Title><![CDATA[%s]]></Title> 
+                <Description><![CDATA[%s]]></Description>
+                <PicUrl><![CDATA[%s]]></PicUrl>
+                <Url><![CDATA[%s]]></Url>
+                </item>";
+
+            foreach ($content as $newArray) {
+                $news = "";
+                $news.= sprintf($str, $newArray['Title'], $newArray['Description'], $newArray['PicUrl'], $newArray['Url']);
+
+            }
+
+            $xml = "<xml>
+                <ToUserName><![CDATA[%s]]></ToUserName>
+                <FromUserName><![CDATA[%s]]></FromUserName>
+                <CreateTime>%s</CreateTime>
+                <MsgType><![CDATA[%s]]></MsgType>
+                <ArticleCount>%s</ArticleCount>
+                <Articles>
+                    $news
+                </Articles>
+                </xml> ";
+
+            $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName,time(), "news", count($newArray));
+
+            return $result;
         }
 
         private function logger($content) {
