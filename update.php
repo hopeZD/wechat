@@ -7,13 +7,18 @@
  */
 
 
-    function http_curl($url) {
+    function http_curl($url, $data=null) {
 
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, $url);
 
         //curl_setopt($ch, CURLOPT_HEADER, 0);
+
+        if(!empty($data)) {
+            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        }
 
         //禁止curl资源直接输出
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -37,12 +42,17 @@
 
         $result = json_encode($json);
 
-        return $result['access_token'];
+        return $result->access_token;
     }
 
     $token = get_token();
-    var_dump($token);
+    //var_dump($token);
 
     $type = 'image';
+    $path = dirname(__FILE__)."/1.jpg";
+    $data = array("media" =>"@".$path);
 
     $url = "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token={$token}&type={$type}";
+
+    $arr = http_curl($url, $data);
+    var_dump($arr);
