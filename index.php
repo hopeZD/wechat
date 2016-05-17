@@ -139,9 +139,9 @@
 
             $content = array();
             $content[] = array("Title" => "hello妹子",
-                               "Description" => "疯狂牛仔裤,哈哈哈!!!",
-                               "PicUrl" => "http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg",
-                               "Url" => "http://image.baidu.com/");
+                "Description" => "疯狂牛仔裤,哈哈哈!!!",
+                "PicUrl" => "http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg",
+                "Url" => "http://image.baidu.com/");
 
             $content[] = array("Title" => "hello妹子",
                 "Description" => "疯狂牛仔裤,哈哈哈!!!",
@@ -160,10 +160,9 @@
                 <Url><![CDATA[%s]]></Url>
                 </item>";
 
+            $news="";
             foreach ($content as $newArray) {
-                $news = "";
-                $news.= sprintf($str, $newArray['Title'], $newArray['Description'], $newArray['PicUrl'], $newArray['Url']);
-
+                $news.=sprintf($str, $newArray['Title'], $newArray['Description'], $newArray['PicUrl'], $newArray['Url']);
             }
 
             $xml = "<xml>
@@ -177,7 +176,7 @@
                 </Articles>
                 </xml> ";
 
-            $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName,time(), "news", count($newArray));
+            $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName,time(), "news", count($content));
 
             return $result;
         }
