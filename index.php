@@ -98,12 +98,34 @@
 
                 $result = $this->receiveImages($postSql);
 
+            } else if (strstr($content, "图片")) {
+
+                $result = $this->receiveMedia($postSql);
             }
 
 
             $this->logger("发送图文消息: \n".$result);
 
             return $result;
+
+        }
+
+        //图片消息
+        private function receiveMedia($postSql) {
+
+            $xml = "<xml>
+                 <ToUserName><![CDATA[%s]]></ToUserName>
+                 <FromUserName><![CDATA[%s]]></FromUserName>
+                 <CreateTime>%s</CreateTime>
+                 <MsgType><![CDATA[%s]]></MsgType>
+                 <PicUrl><![CDATA[%s]]></PicUrl>
+                 <MediaId><![CDATA[%s]]></MediaId>
+                 <MsgId>%s</MsgId>
+                 </xml>";
+
+            $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType, 'image', 
+                'http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg',);
+
 
         }
 
