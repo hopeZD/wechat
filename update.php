@@ -41,7 +41,7 @@
     }
 
     $token = get_token();
-    var_dump($token->access_token);
+    var_dump($token);
 
     $type = 'image';
 
