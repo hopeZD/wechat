@@ -36,7 +36,7 @@
 
         $result = json_encode($json);
 
-        return $result;
+        return $result->access_token;
     }
 
     $token = get_token();
@@ -44,4 +44,4 @@
 
     $type = 'image';
 
-    $url = "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token=ACCESS_TOKEN&type={$type}";
+    $url = "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token={$token}&type={$type}";
