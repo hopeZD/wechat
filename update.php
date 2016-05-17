@@ -44,13 +44,13 @@
     }
 
     $token = get_token();
-    var_dump($token);
 
-    $type = 'image';
-    $path = dirname(__FILE__)."/1.jpg";
-    $data = array("media" =>"@".$path);
+    $type="image";
+    $path=dirname(__FILE__)."/1.jpg";
+    $data=array("media"=>"@".$path);
 
-    $url = "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token={$token}&type={$type}";
+    $url="http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token={$token}&type={$type}";
 
-//    $arr = http_curl($url, $data);
-//    var_dump($arr);
+    $arr=http_curl($url,$data);
+
+    var_dump($arr);
