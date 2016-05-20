@@ -51,14 +51,19 @@
 
                     case "text" :
                         $result = $this->receiveText($postSql);
+                        break;
 
+                    case "event" :
+                        $result = $this->receiveEvent($postSql);
+                        break;
+                }
 
-                        if (!empty($result)) {
-                            echo $result;
+                if (!empty($result)) {
+                    echo $result;
 
-                        } else {
+                } else {
 
-                            $xml = "<xml>
+                    $xml = "<xml>
                                 <ToUserName><![CDATA[%s]]></ToUserName>
                                 <FromUserName><![CDATA[%s]]></FromUserName>
                                 <CreateTime>%s</CreateTime>
@@ -66,10 +71,7 @@
                                 <Content><![CDATA[%s]]></Content>
                                 </xml>";
 
-                            echo $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "没有这条文本消息");
-                        }
-
-
+                    echo $result = sprintf($xml, $postSql->FromUserName, $postSql->ToUserName, time(), $postSql->MsgType, "没有这条文本消息");
                 }
             }
         }
@@ -110,6 +112,24 @@
 
         }
 
+        //关注自动回复
+        private function receiveEvent($postSql) {
+            $xml="<xml>
+                <ToUserName><![CDATA[%s]]></ToUserName>
+                <FromUserName><![CDATA[%s]]></FromUserName>
+                <CreateTime>%s</CreateTime>
+                <MsgType><![CDATA[%s]]></MsgType>
+                <Content><![CDATA[%s]]></Content>
+                </xml>";
+
+
+            $result = sprintf($xml,$postSql->FromUserName, $postSql->ToUserName, time(), "text","欢迎关注一尘,哈哈!");
+            
+            $this->logger("自动回复: \n", $result);
+
+            return $result;
+        }
+
         //图片消息
         private function receiveMedia($postSql) {
 
@@ -124,7 +144,9 @@
                  </xml>";
 
             $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType, 'image', 
-                'http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg',);
+                'http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg','hellosihddhiddji');
+
+            return $result;
 
 
         }
