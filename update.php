@@ -47,7 +47,7 @@
     $token = get_token();
     //var_dump($token);
     $type = "image";
-    $path = "/hope/www/defualt/wechat/1.jpg";
+    $path = "hope/www/defualt/wechat/1.jpg";
     $data = array("media" => "@".$path);
 
     $url = "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token={$token}&type={$type}";
