@@ -124,7 +124,7 @@
 
 
             $result = sprintf($xml,$postSql->FromUserName, $postSql->ToUserName, time(), "text","欢迎关注一尘,哈哈!");
-            
+
             $this->logger("自动回复: \n", $result);
 
             return $result;
@@ -144,7 +144,7 @@
                  </xml>";
 
             $result=sprintf($xml,$postSql->FromUserName,$postSql->ToUserName,time(),$postSql->MsgType, 'image', 
-                'http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg','hellosihddhiddji');
+                'http://ww2.sinaimg.cn/large/005usUragw1edeexbv1euj30dw0aeq4k.jpg','gtOmrA0878e292');
 
             return $result;
 
